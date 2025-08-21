@@ -8,6 +8,7 @@ import {
   DropdownMenuTrigger 
 } from '@/components/ui/dropdown-menu';
 import { ChevronDown, Gamepad2, Globe, Menu, X } from 'lucide-react';
+import zestraLogo from '@/assets/zestra-logo.png';
 
 export const Navigation = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -31,9 +32,11 @@ export const Navigation = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <NavLink to="/" className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gradient-primary rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-lg">Z</span>
-            </div>
+            <img 
+              src={zestraLogo}
+              alt="Zestra Hosting Logo"
+              className="w-8 h-8 rounded-lg"
+            />
             <span className="text-xl font-bold text-glow">Zestra Hosting</span>
           </NavLink>
 

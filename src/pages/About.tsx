@@ -37,12 +37,12 @@ const About = () => {
               <div>
                 <h3 className="text-2xl font-bold mb-6 text-primary">The Beginning</h3>
                 <p className="text-muted-foreground mb-6">
-                  Founded in 2020 by a group of passionate developers and system administrators, 
-                  Zestra Hosting was born from frustration with overpriced, underperforming hosting services. 
+                  Founded by a close-knit group of friends who shared a passion for technology and innovation, 
+                  Zestra Hosting was born from our collective frustration with overpriced, underperforming hosting services. 
                   We believed that powerful, reliable hosting should be accessible to everyone.
                 </p>
                 <p className="text-muted-foreground">
-                  Starting with just a single server in a data center, we focused on delivering 
+                  Starting with just a single server and a dream, our friends group focused on delivering 
                   exceptional performance and customer service that the hosting industry was missing.
                 </p>
               </div>
@@ -135,31 +135,31 @@ const About = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             <div className="card-glow text-center">
               <div className="w-24 h-24 bg-gradient-primary rounded-full mx-auto mb-6 flex items-center justify-center">
-                <span className="text-2xl font-bold text-white">AK</span>
+                <span className="text-2xl font-bold text-white">K</span>
               </div>
-              <h3 className="text-xl font-bold mb-2">Alex Kumar</h3>
-              <Badge className="mb-4">CEO & Founder</Badge>
+              <h3 className="text-xl font-bold mb-2">Kushagra</h3>
+              <Badge className="mb-4">Co-Founder & CEO</Badge>
               <p className="text-muted-foreground text-sm">
-                Former tech lead at major cloud providers, passionate about democratizing hosting technology.
+                Visionary leader passionate about democratizing hosting technology and building scalable solutions.
               </p>
             </div>
 
             <div className="card-glow text-center">
               <div className="w-24 h-24 bg-gradient-secondary rounded-full mx-auto mb-6 flex items-center justify-center">
-                <span className="text-2xl font-bold text-white">SJ</span>
+                <span className="text-2xl font-bold text-white">P</span>
               </div>
-              <h3 className="text-xl font-bold mb-2">Sarah Johnson</h3>
-              <Badge className="mb-4">CTO</Badge>
+              <h3 className="text-xl font-bold mb-2">Parshwa</h3>
+              <Badge className="mb-4">Co-Founder & CTO</Badge>
               <p className="text-muted-foreground text-sm">
-                Infrastructure architect with 15+ years experience building scalable hosting platforms.
+                Infrastructure architect with expertise in building high-performance hosting platforms.
               </p>
             </div>
 
             <div className="card-glow text-center">
               <div className="w-24 h-24 bg-gradient-to-r from-accent to-primary rounded-full mx-auto mb-6 flex items-center justify-center">
-                <span className="text-2xl font-bold text-white">MC</span>
+                <span className="text-2xl font-bold text-white">V</span>
               </div>
-              <h3 className="text-xl font-bold mb-2">Mike Chen</h3>
+              <h3 className="text-xl font-bold mb-2">Vishvam</h3>
               <Badge className="mb-4">Head of Engineering</Badge>
               <p className="text-muted-foreground text-sm">
                 Full-stack engineer focused on performance optimization and security infrastructure.

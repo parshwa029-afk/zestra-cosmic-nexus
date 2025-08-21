@@ -5,63 +5,75 @@ import webHostingImage from '@/assets/web-hosting.jpg';
 
 const plans = [
   {
-    name: 'Basic',
-    price: '$3.99',
+    name: 'Starter',
+    price: '₹49',
     ram: '1GB',
     cpu: '1 vCore',
-    storage: '25GB SSD',
-    bandwidth: '250GB',
-    features: ['1 Website', 'Free SSL Certificate', 'Daily Backups', 'cPanel Access', '99.9% Uptime'],
+    storage: '5GB NVMe',
+    bandwidth: '100GB',
+    websites: '1',
+    emails: '2',
+    features: ['Free SSL', 'cPanel/HestiaCP', 'MySQL', 'PHP', 'Daily Backups', 'DDoS Protection', '99.9% Uptime'],
     popular: false,
   },
   {
-    name: 'Advanced',
-    price: '$7.99',
+    name: 'Growth',
+    price: '₹99',
     ram: '2GB',
     cpu: '2 vCores',
-    storage: '50GB SSD',
-    bandwidth: '500GB',
-    features: ['5 Websites', 'Free Domain', 'Advanced Security', 'Email Hosting', 'Premium Support'],
+    storage: '15GB NVMe',
+    bandwidth: '300GB',
+    websites: '3',
+    emails: '10',
+    features: ['Free SSL', 'cPanel/HestiaCP', 'MySQL', 'PHP', 'Daily Backups', 'DDoS Protection', '99.9% Uptime'],
     popular: true,
   },
   {
-    name: 'Big',
-    price: '$15.99',
+    name: 'Pro',
+    price: '₹199',
     ram: '4GB',
     cpu: '3 vCores',
-    storage: '100GB SSD',
-    bandwidth: '1TB',
-    features: ['15 Websites', 'Advanced Analytics', 'CDN Integration', 'Database Management', 'Priority Support'],
+    storage: '30GB NVMe',
+    bandwidth: '500GB',
+    websites: '5',
+    emails: '25',
+    features: ['Free SSL', 'cPanel/HestiaCP', 'MySQL', 'PHP', 'Daily Backups', 'DDoS Protection', '99.9% Uptime'],
     popular: false,
   },
   {
-    name: 'Bigger',
-    price: '$29.99',
+    name: 'Business',
+    price: '₹499',
     ram: '8GB',
     cpu: '4 vCores',
-    storage: '200GB SSD',
-    bandwidth: '2TB',
-    features: ['50 Websites', 'White-label Options', 'Advanced Monitoring', 'Custom Solutions', 'Dedicated Manager'],
+    storage: '100GB NVMe',
+    bandwidth: '1TB',
+    websites: '10',
+    emails: '50',
+    features: ['Free SSL', 'cPanel/HestiaCP', 'MySQL', 'PHP', 'Daily Backups', 'DDoS Protection', '99.9% Uptime'],
     popular: false,
   },
   {
-    name: 'GOAT',
-    price: '$49.99',
+    name: 'GOAT 🐐',
+    price: '₹999',
     ram: '16GB',
     cpu: '6 vCores',
-    storage: '400GB SSD',
-    bandwidth: '5TB',
-    features: ['Unlimited Websites', 'Enterprise Security', 'Performance Optimization', 'Custom Development', '24/7 Phone Support'],
+    storage: '250GB NVMe',
+    bandwidth: '3TB',
+    websites: '25',
+    emails: '150',
+    features: ['Free SSL', 'cPanel/HestiaCP', 'MySQL', 'PHP', 'Daily Backups', 'DDoS Protection', '99.9% Uptime'],
     popular: false,
   },
   {
-    name: 'GOATED',
-    price: '$99.99',
+    name: 'GOATED 🔥',
+    price: '₹1,999',
     ram: '32GB',
     cpu: '8 vCores',
-    storage: '1TB SSD',
-    bandwidth: 'Unlimited',
-    features: ['Everything Unlimited', 'Dedicated Resources', 'Custom Infrastructure', 'Personal Account Manager', 'SLA Guarantee'],
+    storage: '500GB NVMe',
+    bandwidth: '10TB',
+    websites: 'Unlimited*',
+    emails: '500',
+    features: ['Free SSL', 'cPanel/HestiaCP', 'MySQL', 'PHP', 'Daily Backups', 'DDoS Protection', '99.9% Uptime', 'Fair Usage Policy'],
     popular: false,
   },
 ];
@@ -131,34 +143,45 @@ const WebHosting = () => {
                   <div className="text-sm text-muted-foreground">/month</div>
                 </div>
 
-                <div className="grid grid-cols-2 gap-4 mb-6">
+                <div className="grid grid-cols-2 gap-3 mb-6">
                   <div className="text-center">
-                    <div className="flex items-center justify-center w-12 h-12 bg-secondary/10 rounded-lg mx-auto mb-2">
-                      <Zap className="h-6 w-6 text-secondary" />
+                    <div className="flex items-center justify-center w-10 h-10 bg-secondary/10 rounded-lg mx-auto mb-2">
+                      <Zap className="h-5 w-5 text-secondary" />
                     </div>
-                    <div className="text-sm text-muted-foreground">RAM</div>
-                    <div className="font-semibold">{plan.ram}</div>
+                    <div className="text-xs text-muted-foreground">RAM</div>
+                    <div className="font-semibold text-sm">{plan.ram}</div>
                   </div>
                   <div className="text-center">
-                    <div className="flex items-center justify-center w-12 h-12 bg-accent/10 rounded-lg mx-auto mb-2">
-                      <Cpu className="h-6 w-6 text-accent" />
+                    <div className="flex items-center justify-center w-10 h-10 bg-accent/10 rounded-lg mx-auto mb-2">
+                      <Cpu className="h-5 w-5 text-accent" />
                     </div>
-                    <div className="text-sm text-muted-foreground">CPU</div>
-                    <div className="font-semibold">{plan.cpu}</div>
+                    <div className="text-xs text-muted-foreground">CPU</div>
+                    <div className="font-semibold text-sm">{plan.cpu}</div>
                   </div>
                   <div className="text-center">
-                    <div className="flex items-center justify-center w-12 h-12 bg-primary/10 rounded-lg mx-auto mb-2">
-                      <HardDrive className="h-6 w-6 text-primary" />
+                    <div className="flex items-center justify-center w-10 h-10 bg-primary/10 rounded-lg mx-auto mb-2">
+                      <HardDrive className="h-5 w-5 text-primary" />
                     </div>
-                    <div className="text-sm text-muted-foreground">Storage</div>
-                    <div className="font-semibold">{plan.storage}</div>
+                    <div className="text-xs text-muted-foreground">Storage</div>
+                    <div className="font-semibold text-sm">{plan.storage}</div>
                   </div>
                   <div className="text-center">
-                    <div className="flex items-center justify-center w-12 h-12 bg-secondary/10 rounded-lg mx-auto mb-2">
-                      <Database className="h-6 w-6 text-secondary" />
+                    <div className="flex items-center justify-center w-10 h-10 bg-secondary/10 rounded-lg mx-auto mb-2">
+                      <Database className="h-5 w-5 text-secondary" />
                     </div>
-                    <div className="text-sm text-muted-foreground">Bandwidth</div>
-                    <div className="font-semibold">{plan.bandwidth}</div>
+                    <div className="text-xs text-muted-foreground">Bandwidth</div>
+                    <div className="font-semibold text-sm">{plan.bandwidth}</div>
+                  </div>
+                </div>
+                
+                <div className="grid grid-cols-2 gap-3 mb-6 pt-3 border-t border-primary/10">
+                  <div className="text-center">
+                    <div className="text-sm text-muted-foreground">Websites</div>
+                    <div className="font-semibold text-primary">{plan.websites}</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-sm text-muted-foreground">Email Accounts</div>
+                    <div className="font-semibold text-secondary">{plan.emails}</div>
                   </div>
                 </div>
 

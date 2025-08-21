@@ -68,22 +68,14 @@ export const HeroSection = () => {
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16 pt-8 border-t border-primary/20">
+        <div className="grid grid-cols-2 md:grid-cols-2 gap-8 mt-16 pt-8 border-t border-primary/20">
           <div className="text-center">
-            <div className="text-3xl font-bold text-primary mb-2">99.9%</div>
-            <div className="text-sm text-muted-foreground">Uptime SLA</div>
+            <div className="text-3xl font-bold text-primary mb-2">Reliable</div>
+            <div className="text-sm text-muted-foreground">Performance Guaranteed</div>
           </div>
           <div className="text-center">
-            <div className="text-3xl font-bold text-secondary mb-2">50K+</div>
-            <div className="text-sm text-muted-foreground">Active Servers</div>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl font-bold text-accent mb-2">24/7</div>
-            <div className="text-sm text-muted-foreground">Expert Support</div>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl font-bold text-primary mb-2">Global</div>
-            <div className="text-sm text-muted-foreground">Data Centers</div>
+            <div className="text-3xl font-bold text-secondary mb-2">Secure</div>
+            <div className="text-sm text-muted-foreground">Enterprise Protection</div>
           </div>
         </div>
       </div>
