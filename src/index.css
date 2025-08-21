@@ -2,39 +2,64 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Zestra Hosting Futuristic Design System - All colors MUST be HSL */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Core Brand Colors */
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Zestra Brand Purple/Violet Theme */
+    --primary: 262 83% 58%;
+    --primary-foreground: 0 0% 98%;
+    --primary-glow: 262 100% 70%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Light Blue Accents */
+    --secondary: 199 89% 48%;
+    --secondary-foreground: 0 0% 98%;
+    --secondary-glow: 199 100% 70%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Blue Highlights */
+    --accent: 217 91% 60%;
+    --accent-foreground: 0 0% 98%;
+    --accent-glow: 217 100% 75%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Muted Dark Theme */
+    --muted: 240 5% 16%;
+    --muted-foreground: 240 5% 65%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Danger/Error */
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* UI Elements */
+    --border: 240 6% 20%;
+    --input: 240 6% 20%;
+    --ring: 262 83% 58%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(262 83% 58%), hsl(217 91% 60%));
+    --gradient-secondary: linear-gradient(135deg, hsl(199 89% 48%), hsl(262 83% 58%));
+    --gradient-hero: linear-gradient(135deg, hsl(240 10% 3.9%), hsl(262 83% 58% / 0.1), hsl(199 89% 48% / 0.1));
+    --gradient-card: linear-gradient(135deg, hsl(240 6% 20% / 0.5), hsl(262 83% 58% / 0.1));
+
+    /* Glow Effects */
+    --glow-primary: 0 0 20px hsl(262 83% 58% / 0.5);
+    --glow-secondary: 0 0 20px hsl(199 89% 48% / 0.5);
+    --glow-accent: 0 0 20px hsl(217 91% 60% / 0.5);
+    --glow-intense: 0 0 40px hsl(262 83% 58% / 0.8);
+
+    /* Shadows */
+    --shadow-glow: 0 10px 30px -10px hsl(262 83% 58% / 0.3);
+    --shadow-card: 0 20px 25px -5px hsl(240 10% 3.9% / 0.1), 0 10px 10px -5px hsl(240 10% 3.9% / 0.04);
+    --shadow-3d: 0 4px 20px hsl(262 83% 58% / 0.4), inset 0 1px 0 hsl(0 0% 100% / 0.1);
 
     --radius: 0.5rem;
 
@@ -91,6 +116,10 @@ All colors MUST be HSL.
     --sidebar-accent-foreground: 240 4.8% 95.9%;
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-glow: box-shadow 0.3s ease-in-out;
   }
 }
 
@@ -101,5 +130,178 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    background: var(--gradient-hero);
+    min-height: 100vh;
+  }
+
+  /* Scrollbar Styling */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--muted));
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--primary));
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--primary-glow));
+  }
+}
+
+@layer components {
+  /* Button Variants */
+  .btn-hero {
+    @apply bg-gradient-to-r from-primary to-accent text-primary-foreground;
+    @apply px-8 py-4 rounded-xl font-semibold;
+    @apply transition-all duration-300;
+    @apply shadow-[var(--shadow-glow)] hover:shadow-[var(--glow-intense)];
+    @apply hover:scale-105 active:scale-95;
+  }
+
+  .btn-secondary-glow {
+    @apply bg-gradient-to-r from-secondary to-accent text-secondary-foreground;
+    @apply px-6 py-3 rounded-lg font-medium;
+    @apply transition-all duration-300;
+    @apply shadow-[var(--glow-secondary)] hover:shadow-[var(--glow-accent)];
+    @apply hover:scale-105 active:scale-95;
+  }
+
+  .btn-ghost-glow {
+    @apply border border-primary/30 bg-primary/10 text-primary;
+    @apply px-6 py-3 rounded-lg font-medium;
+    @apply transition-all duration-300;
+    @apply hover:bg-primary/20 hover:shadow-[var(--glow-primary)];
+    @apply hover:scale-105 active:scale-95;
+  }
+
+  /* Card Variants */
+  .card-glow {
+    @apply bg-gradient-to-br from-muted/50 to-muted/20;
+    @apply border border-primary/20 rounded-xl p-6;
+    @apply backdrop-blur-sm transition-all duration-300;
+    @apply hover:shadow-[var(--shadow-glow)] hover:border-primary/40;
+    @apply hover:scale-105;
+  }
+
+  .card-plan {
+    @apply bg-gradient-to-br from-card to-muted/30;
+    @apply border border-primary/30 rounded-2xl p-8;
+    @apply backdrop-blur-sm transition-all duration-500;
+    @apply hover:shadow-[var(--glow-intense)] hover:border-primary/60;
+    @apply hover:scale-105 hover:-translate-y-2;
+  }
+
+  /* Text Effects */
+  .text-glow {
+    text-shadow: 0 0 10px hsl(var(--primary) / 0.5);
+  }
+
+  .text-hero {
+    @apply text-6xl font-bold bg-gradient-to-r from-primary via-secondary to-accent;
+    @apply bg-clip-text text-transparent;
+    text-shadow: 0 0 30px hsl(var(--primary) / 0.3);
+  }
+
+  /* Animated Background */
+  .bg-animated {
+    background: var(--gradient-hero);
+    background-size: 400% 400%;
+    animation: gradientShift 10s ease infinite;
+  }
+
+  .bg-particles::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+      radial-gradient(2px 2px at 20px 30px, hsl(var(--primary)), transparent),
+      radial-gradient(2px 2px at 40px 70px, hsl(var(--secondary)), transparent),
+      radial-gradient(1px 1px at 90px 40px, hsl(var(--accent)), transparent);
+    background-repeat: repeat;
+    background-size: 200px 100px;
+    animation: particles 20s linear infinite;
+    opacity: 0.3;
+    pointer-events: none;
+  }
+
+  /* Navigation Effects */
+  .nav-link {
+    @apply text-foreground/80 hover:text-foreground transition-all duration-300;
+    @apply relative;
+  }
+
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, hsl(var(--primary)), hsl(var(--secondary)));
+    transition: width 0.3s ease;
+  }
+
+  .nav-link:hover::after {
+    width: 100%;
+  }
+
+  /* Glow Animation */
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+}
+
+@layer utilities {
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .shadow-glow-intense {
+    box-shadow: var(--glow-intense);
+  }
+
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .gradient-secondary {
+    background: var(--gradient-secondary);
+  }
+
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .gradient-card {
+    background: var(--gradient-card);
+  }
+}
+
+/* Keyframe Animations */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes particles {
+  0% { transform: translateY(0px) rotate(0deg); }
+  100% { transform: translateY(-100px) rotate(360deg); }
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.5);
+  }
+  to {
+    box-shadow: 0 0 30px hsl(var(--primary) / 0.8), 0 0 40px hsl(var(--secondary) / 0.3);
   }
 }
